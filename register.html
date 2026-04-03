@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - OpenBook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-950 text-white min-h-screen flex items-center justify-center">
+
+  <div class="max-w-md w-full mx-auto p-6">
+    <div class="bg-gray-900 rounded-3xl shadow-2xl p-10">
+
+      <div class="flex justify-center mb-8">
+        <div class="w-16 h-16 bg-teal-500 rounded-2xl flex items-center justify-center text-4xl shadow-inner">
+          📖
+        </div>
+      </div>
+
+      <h1 class="text-4xl font-bold text-center mb-2">অ্যাকাউন্ট তৈরি করুন</h1>
+      <p class="text-center text-gray-400 mb-10">OpenBook এ যোগ দিন</p>
+
+      <form id="registerForm" class="space-y-6">
+        <div>
+          <label class="block text-sm text-gray-400 mb-2">পুরো নাম</label>
+          <input type="text" required
+                 class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-teal-500"
+                 placeholder="আপনার পুরো নাম">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-400 mb-2">মোবাইল নাম্বার</label>
+          <input type="tel" required
+                 class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-teal-500"
+                 placeholder="01XXXXXXXXX">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-400 mb-2">গ্রুপ</label>
+          <input type="email"
+                 class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-teal-500"
+                 placeholder="your@email.com">
+        </div>
+
+        <div>
+          <label class="block text-sm text-gray-400 mb-2">পাসওয়ার্ড</label>
+          <input type="password" required
+                 class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-6 py-4 focus:outline-none focus:border-teal-500"
+                 placeholder="কমপক্ষে ৬ অক্ষর">
+        </div>
+
+        <button type="submit"
+                class="w-full bg-teal-600 hover:bg-teal-500 py-5 rounded-3xl text-xl font-bold transition">
+          রেজিস্টার করুন
+        </button>
+      </form>
+
+      <div class="text-center mt-8">
+        <p class="text-gray-400">
+          ইতিমধ্যে অ্যাকাউন্ট আছে? 
+          <a href="login.html" class="text-teal-400 font-semibold hover:text-teal-300">লগইন করুন</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert("✅ রেজিস্ট্রেশন সফল হয়েছে!\n\nএখন লগইন করুন");
+      window.location.href = "login.html";
+    });
+  </script>
+</body>
+</html>

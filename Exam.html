@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exam - OpenBook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .nav-active { color: #14b8a6; border-bottom: 4px solid #14b8a6; }
+  </style>
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+
+  <!-- Top Nav (same for all pages) -->
+  <nav class="bg-gray-900 rounded-2xl px-6 py-4 m-6 flex items-center justify-between shadow-xl">
+    <div class="flex items-center gap-3">
+      <div class="w-9 h-9 bg-teal-500 rounded-xl flex items-center justify-center text-2xl">📖</div>
+      <h1 class="text-2xl font-bold">OpenBook</h1>
+    </div>
+    <div class="flex-1 max-w-xl mx-8">
+      <input type="text" placeholder="Search exams..." 
+             class="w-full bg-gray-800 rounded-full py-3 px-6 pl-12 focus:outline-none">
+    </div>
+    <div class="flex items-center gap-2 bg-gray-800 rounded-full px-4 py-2">
+      <span>Dark</span>
+      <div class="w-11 h-6 bg-teal-600 rounded-full relative"><div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div></div>
+      <span class="text-teal-400">Bright</span>
+    </div>
+  </nav>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex gap-8 border-b border-gray-800 pb-4 mb-8 text-lg">
+      <a href="index.html" class="text-gray-400 hover:text-white">HOME</a>
+      <a href="Exam.html" class="nav-active font-semibold">EXAM</a>
+      <a href="questionbank.html" class="text-gray-400 hover:text-white">Question Bank</a>
+      <a href="profile.html" class="text-gray-400 hover:text-white">Profile</a>
+      <a href="setting.html" class="text-gray-400 hover:text-white">Setting</a>
+    </div>
+
+    <h2 class="text-3xl font-bold mb-8">Upcoming & Live Exams</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-900 rounded-3xl p-6">
+        <h3 class="text-xl font-semibold">HSC Physics 1st Paper</h3>
+        <p class="text-teal-400 mt-2">25 March 2026 | 10:00 AM</p>
+        <button class="mt-6 w-full bg-teal-600 hover:bg-teal-500 py-4 rounded-2xl">Start Exam</button>
+      </div>
+      <div class="bg-gray-900 rounded-3xl p-6">
+        <h3 class="text-xl font-semibold">SSC Mathematics Full Mock</h3>
+        <p class="text-teal-400 mt-2">28 March 2026 | 3:00 PM</p>
+        <button class="mt-6 w-full bg-teal-600 hover:bg-teal-500 py-4 rounded-2xl">Start Exam</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

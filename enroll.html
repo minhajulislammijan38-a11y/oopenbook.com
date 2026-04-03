@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Details & Enrollment - OpenBook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+
+  <div class="max-w-4xl mx-auto p-6 pt-12">
+
+    <div class="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
+
+      <!-- Course Header -->
+      <div class="bg-gradient-to-r from-teal-600 to-cyan-600 p-10 text-center">
+        <h1 class="text-4xl font-bold">Daily Live Class</h1>
+        <p class="text-2xl text-teal-100 mt-2">বাংলা + English + ICT</p>
+        <div class="mt-6 inline-block bg-white/20 px-8 py-3 rounded-3xl">
+          <span class="text-5xl font-bold">সন্ধ্যা ৬:৩০ PM</span>
+        </div>
+      </div>
+
+      <div class="p-10">
+
+        <!-- Course Details -->
+        <h2 class="text-3xl font-semibold mb-6 flex items-center gap-3">
+          <i class="fas fa-info-circle text-teal-400"></i> 
+          কোর্স সম্পর্কে বিস্তারিত
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="space-y-6">
+            <div>
+              <h3 class="font-medium text-teal-400">বিষয়সমূহ</h3>
+              <ul class="mt-3 space-y-2 text-lg">
+                <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> বাংলা (১ম ও ২য় পত্র)</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> English (Grammar + Writing)</li>
+                <li class="flex items-center gap-3"><i class="fas fa-check text-emerald-400"></i> ICT (তথ্য ও যোগাযোগ প্রযুক্তি)</li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-medium text-teal-400">সময়কাল</h3>
+              <p class="text-xl">প্রতিদিন সন্ধ্যা <strong>৬:৩০ PM</strong> থেকে</p>
+              <p class="text-gray-400">প্রতি ক্লাস ≈ ৪৫-৬০ মিনিট</p>
+            </div>
+          </div>
+
+          <div>
+            <h3 class="font-medium text-teal-400 mb-3">বিশেষ সুবিধা</h3>
+            <div class="bg-gray-800 rounded-2xl p-6 space-y-4">
+              <div class="flex gap-3"><i class="fas fa-star text-yellow-400 mt-1"></i> MCQ + CQ Exam Suggestion</div>
+              <div class="flex gap-3"><i class="fas fa-star text-yellow-400 mt-1"></i> Weekly Model Test</div>
+              <div class="flex gap-3"><i class="fas fa-star text-yellow-400 mt-1"></i> Recorded Class + Notes</div>
+              <div class="flex gap-3"><i class="fas fa-star text-yellow-400 mt-1"></i> Progress Tracking</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Class Routine Section -->
+        <h2 class="text-3xl font-semibold mb-6 flex items-center gap-3">
+          <i class="fas fa-clock text-teal-400"></i> 
+          ক্লাস রুটিন
+        </h2>
+
+        <!-- Routine Table -->
+        <div class="bg-gray-800 rounded-2xl p-8 mb-10 overflow-x-auto">
+          <table class="w-full text-left">
+            <thead>
+              <tr class="border-b border-gray-700">
+                <th class="py-4 px-6">দিন</th>
+                <th class="py-4 px-6">সময়</th>
+                <th class="py-4 px-6">বিষয়</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-300">
+              <tr class="border-b border-gray-700">
+                <td class="py-5 px-6 font-medium">প্রতিদিন</td>
+                <td class="py-5 px-6">সন্ধ্যা ৬:৩০ PM - ৭:৩০ PM</td>
+                <td class="py-5 px-6">বাংলা / English / ICT (রোটেশন অনুযায়ী)</td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="py-5 px-6 font-medium">শনিবার</td>
+                <td class="py-5 px-6">৬:৩০ PM</td>
+                <td class="py-5 px-6">বাংলা</td>
+              </tr>
+              <tr class="border-b border-gray-700">
+                <td class="py-5 px-6 font-medium">রবিবার</td>
+                <td class="py-5 px-6">৬:৩০ PM</td>
+                <td class="py-5 px-6">English</td>
+              </tr>
+              <tr>
+                <td class="py-5 px-6 font-medium">সোমবার</td>
+                <td class="py-5 px-6">৬:৩০ PM</td>
+                <td class="py-5 px-6">ICT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Routine Picture -->
+        <div class="mb-10">
+          <h3 class="text-xl font-medium mb-4">রুটিনের ছবি</h3>
+          <div class="bg-gray-800 rounded-3xl p-4 border border-gray-700">
+            <img id="routineImage" 
+                 src="https://via.placeholder.com/800x450/1f2937/14b8a6?text=Class+Routine+Image" 
+                 alt="Daily Class Routine"
+                 class="w-full rounded-2xl">
+          </div>
+          <p class="text-center text-sm text-gray-500 mt-3">
+            * এখানে আপনার আসল রুটিনের ছবি আপলোড করুন
+          </p>
+        </div>
+
+        <!-- Fee & Payment -->
+        <div class="bg-gradient-to-br from-teal-900 to-cyan-900 rounded-3xl p-8 text-center mb-10">
+          <p class="text-6xl font-bold">৫০০ টাকা</p>
+          <p class="text-teal-200">পুরো কোর্সের জন্য</p>
+          <p class="mt-6 text-lg">অসচ্ছল শিক্ষার্থীদের জন্য **সম্পূর্ণ ফ্রি**</p>
+        </div>
+
+        <!-- Enrollment Form & Payment (আগের মতোই সংক্ষেপে) -->
+        <form id="enrollForm" class="space-y-8">
+          <!-- Student info fields এখানে রাখুন (আগের পেজ থেকে কপি করে নিন) -->
+
+          <button action="payment.html"  type="submit" 
+                  class="w-full bg-teal-600 hover:bg-teal-500 py-6 rounded-3xl text-2xl font-bold transition"  >
+            Enroll and payment
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+ 
+</body>
+</html>

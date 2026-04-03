@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirm Enrollment - OpenBook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-950 text-white min-h-screen">
+
+  <div class="max-w-2xl mx-auto p-6 pt-12">
+
+    <div class="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl">
+
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-teal-600 to-cyan-600 p-10 text-center">
+        <h1 class="text-3xl font-bold">Confirm Your Enrollment</h1>
+        <p class="text-teal-100 mt-2">বাংলা + ইংলিশ + আইসিটি লাইভ ক্লাস</p>
+      </div>
+
+      <div class="p-10">
+
+        <!-- Course Summary -->
+        <div class="bg-gray-800 rounded-2xl p-6 mb-8">
+          <div class="flex justify-between items-center">
+            <div>
+              <h3 class="text-xl font-semibold">Daily Live Class</h3>
+              <p class="text-gray-400">সন্ধ্যা ৬:৩০ PM থেকে</p>
+            </div>
+            <div class="text-right">
+              <p class="text-4xl font-bold text-teal-400">৫০০৳</p>
+              <p class="text-sm text-gray-400">পুরো কোর্স</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student Information Form -->
+        <h2 class="text-2xl font-semibold mb-6">আপনার তথ্য</h2>
+        
+        <form id="paymentForm" class="space-y-6">
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm text-gray-400 mb-2">পুরো নাম</label>
+              <input type="text" id="studentName" required
+                     class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-teal-500"
+                     placeholder="আপনার নাম">
+            </div>
+            <div>
+              <label class="block text-sm text-gray-400 mb-2">মোবাইল নাম্বার</label>
+              <input type="tel" id="phone" required
+                     class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-teal-500"
+                     placeholder="01XXXXXXXXX">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">ইমেইল (ঐচ্ছিক)</label>
+            <input type="email" id="email"
+                   class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-teal-500"
+                   placeholder="your@email.com">
+          </div>
+
+          <div>
+            <label class="block text-sm text-gray-400 mb-2">BOU Student ID (যদি থাকে)</label>
+            <input type="text" id="bouId"
+                   class="w-full bg-gray-800 border border-gray-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-teal-500"
+                   placeholder="Optional">
+          </div>
+
+          <!-- Payment Method -->
+          <div>
+            <label class="block text-sm text-gray-400 mb-4">পেমেন্ট করুন</label>
+            <div class="grid grid-cols-3 gap-4">
+              <button type="button" onclick="selectPayment(this)" class="payment-btn bg-gray-800 hover:bg-teal-900 border-2 border-transparent rounded-2xl p-6 text-center transition">
+                <div class="text-4xl mb-2">📱</div>
+                <div class="font-medium">বিকাশ</div>
+              </button>
+              <button type="button" onclick="selectPayment(this)" class="payment-btn bg-gray-800 hover:bg-teal-900 border-2 border-transparent rounded-2xl p-6 text-center transition">
+                <div class="text-4xl mb-2">📱</div>
+                <div class="font-medium">নগদ</div>
+              </button>
+              <button type="button" onclick="selectPayment(this)" class="payment-btn bg-gray-800 hover:bg-teal-900 border-2 border-transparent rounded-2xl p-6 text-center transition">
+                <div class="text-4xl mb-2">🚀</div>
+                <div class="font-medium">রকেট</div>
+              </button>
+            </div>
+          </div>
+
+          <div id="paymentDetails" class="hidden bg-gray-800 rounded-2xl p-6 mt-6">
+            <p class="font-medium mb-3">পেমেন্ট করুন এই নাম্বারে:</p>
+            <div class="bg-gray-900 p-5 rounded-xl text-xl font-bold flex items-center justify-between">
+              <span id="selectedMethod">বিকাশ</span>
+              <span class="text-teal-400">01560-017310</span>
+            </div>
+            <p class="text-sm text-gray-400 mt-4">পেমেন্ট করে Transaction ID নিচে দিন</p>
+            <input type="text" id="trxId" placeholder="Transaction ID লিখুন"
+                   class="w-full mt-3 bg-gray-900 border border-gray-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-teal-500">
+          </div>
+
+          <button type="submit"
+                  class="w-full bg-teal-600 hover:bg-teal-500 py-5 rounded-3xl text-xl font-bold transition mt-8">
+            Submit & Confirm Enrollment
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="text-center mt-8 text-gray-500 text-sm">
+      ফ্রি সুবিধা চাইলে 01560017310 নাম্বারে যোগাযোগ করুন
+    </div>
+  </div>
+
+  <script>
+    let selectedMethod = "";
+
+    function selectPayment(btn) {
+      document.querySelectorAll('.payment-btn').forEach(b => {
+        b.classList.remove('border-teal-500', 'bg-teal-900');
+      });
+      btn.classList.add('border-teal-500', 'bg-teal-900');
+      
+      selectedMethod = btn.querySelector('div.font-medium').innerText;
+      document.getElementById('selectedMethod').innerText = selectedMethod;
+      document.getElementById('paymentDetails').classList.remove('hidden');
+    }
+
+    document.getElementById('paymentForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById('studentName').value;
+      const phone = document.getElementById('phone').value;
+      const trx = document.getElementById('trxId').value;
+
+      if (!selectedMethod || !trx) {
+        alert("পেমেন্ট মেথড ও Transaction ID দিন");
+        return;
+      }
+
+      alert(`✅ Enrollment Confirmed!\n\nনাম: ${name}\nমোবাইল: ${phone}\nপেমেন্ট: ${selectedMethod} - ${trx}\n\nক্লাসে স্বাগতম! আপনার ক্লাস লিংক শীঘ্রই পাঠানো হবে।`);
+
+      // Redirect to success or dashboard
+      setTimeout(() => {
+        window.location.href = "index.html";
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>
